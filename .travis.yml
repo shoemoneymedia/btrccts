@@ -18,9 +18,9 @@ before_install:
 - python3 --version
 - sudo apt-get install python3-pip flake8
 - flake8 .
-- pip3 install --upgrade setuptools pip btrccts # --index-url https://test.pypi.org/simple/
+- pip3 install --upgrade setuptools pip
 - pip3 install -r requirements.txt
-- pip3 install -e . --no-deps
+- pip3 install --upgrade --index-url https://test.pypi.org/simple/ btrccts
 - bash -c 'req="$(pip freeze | grep -v btrccts)" ; pip3 install hashin ; touch requirements.txt ; hashin ${req} ; cat requirements.txt'
 - bash -c 'pip3 install pipdeptree ; pipdeptree -fl ; exit 0'
 
